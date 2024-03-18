@@ -7,8 +7,10 @@ import jakarta.persistence.*;
 @Entity
 @Table(name = "t_Adopters")
 public class AdoptersModel extends ContactModel {
-    
+
     public PetTypeEnums preferPetType;
+    @ManyToOne
+    private ShelterModel shelterModel;
 
     public AdoptersModel() {
         super();
@@ -29,6 +31,4 @@ public class AdoptersModel extends ContactModel {
         return super.toString() + "AdoptersModel [preferPetType=" + preferPetType + "]";
     }
 
-  
-    
 }
