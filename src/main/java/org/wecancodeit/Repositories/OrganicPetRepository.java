@@ -5,6 +5,6 @@ import org.wecancodeit.Models.OrganicPetModel;
 
 public interface OrganicPetRepository extends CrudRepository<OrganicPetModel, Long> {
 
-
+    Iterable<OrganicPetModel> findByBreed(Iterable<OrganicPetModel> breed);
     
 }
