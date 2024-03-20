@@ -3,14 +3,14 @@ package org.wecancodeit.Services;
 import java.util.ArrayList;
 import java.util.Optional;
 
-import org.wecancodeit.Models.AdoptersModel;
+
 import org.wecancodeit.Models.OrganicPetModel;
-import org.wecancodeit.Models.ShelterModel;
+
 import org.wecancodeit.Repositories.*;
 
 import jakarta.annotation.Resource;
 
-public class OrganicPetService{
+public class OrganicPetService {
     @Resource
     private OrganicPetRepository organicPetRepository;
 
@@ -21,6 +21,7 @@ public class OrganicPetService{
     public OrganicPetService(OrganicPetRepository organicPetRepository) {
         this.organicPetRepository = organicPetRepository;
     }
+
     public Iterable<OrganicPetModel> findAll() {
         Iterable<OrganicPetModel> organic = new ArrayList<>();
 
@@ -31,6 +32,7 @@ public class OrganicPetService{
         }
         return organic;
     }
+
     public OrganicPetModel findById(Long id) {
         OrganicPetModel organic = null;
         try {
@@ -43,6 +45,7 @@ public class OrganicPetService{
         }
         return organic;
     }
+
     public boolean deleteOrganic(Long id) {
         boolean result = false;
         try {
@@ -57,6 +60,7 @@ public class OrganicPetService{
         }
         return result;
     }
+
     public OrganicPetModel saveOrganic(OrganicPetModel organic) {
         try {
             if (BaseService.isValidOrganic(organic)) {
@@ -68,11 +72,12 @@ public class OrganicPetService{
         }
         return organic;
     }
-public Iterable<OrganicPetModel> findByName(String name) {
+
+    public Iterable<OrganicPetModel> findByName(String name) {
         Iterable<OrganicPetModel> breed = new ArrayList<>();
 
         try {
-                breed = organicPetRepository.findByBreed(breed);
+            breed = organicPetRepository.findByBreed(breed);
 
         } catch (Exception ex) {
             throw ex;
@@ -80,5 +85,5 @@ public Iterable<OrganicPetModel> findByName(String name) {
         return breed;
 
     }
- 
+
 }
