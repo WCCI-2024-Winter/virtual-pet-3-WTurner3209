@@ -3,28 +3,28 @@ package org.wecancodeit.Services;
 import org.springframework.stereotype.Service;
 import org.wecancodeit.Models.PetMaintenanceModel;
 
-import org.wecancodeit.Repositories.PetMaintentanceRepository;
+import org.wecancodeit.Repositories.PetMaintenanceRepository;
 
 import java.util.*;
 import jakarta.annotation.Resource;
 
 @Service
-public class PetMaintenaceService {
+public class PetMaintenanceService {
     @Resource
-    private PetMaintentanceRepository petMaintentanceRepository;
+    private PetMaintenanceRepository petMaintenanceRepository;
 
-    public PetMaintenaceService() {
+    public PetMaintenanceService() {
     }
 
-    public PetMaintenaceService(PetMaintentanceRepository petMaintentanceRepository) {
-        this.petMaintentanceRepository = petMaintentanceRepository;
+    public PetMaintenanceService(PetMaintenanceRepository petMaintenanceRepository) {
+        this.petMaintenanceRepository = petMaintenanceRepository;
     }
 
     public Iterable<PetMaintenanceModel> findAll() {
         Iterable<PetMaintenanceModel> maintenance = new ArrayList<>();
 
         try {
-            maintenance = petMaintentanceRepository.findAll();
+            maintenance = petMaintenanceRepository.findAll();
         } catch (Exception ex) {
             throw ex;
         }
@@ -34,7 +34,7 @@ public class PetMaintenaceService {
     public PetMaintenanceModel findById(Long id) {
         PetMaintenanceModel maintenance = null;
         try {
-            Optional<PetMaintenanceModel> optMaintenance = petMaintentanceRepository.findById(id);
+            Optional<PetMaintenanceModel> optMaintenance = petMaintenanceRepository.findById(id);
             if (optMaintenance.isPresent()) {
                 maintenance = optMaintenance.get();
             }
@@ -48,8 +48,8 @@ public class PetMaintenaceService {
         boolean result = false;
         try {
 
-            petMaintentanceRepository.deleteById(id);
-            Optional<PetMaintenanceModel> optMaintenance = petMaintentanceRepository.findById(id);
+            petMaintenanceRepository.deleteById(id);
+            Optional<PetMaintenanceModel> optMaintenance = petMaintenanceRepository.findById(id);
             if (!optMaintenance.isPresent()) {
                 result = true;
             }
@@ -62,13 +62,25 @@ public class PetMaintenaceService {
     public PetMaintenanceModel saveMaintenance(PetMaintenanceModel maintenance) {
         try {
             if (BaseService.isValidMaintenance(maintenance)) {
-                maintenance = petMaintentanceRepository.save(maintenance);
+                maintenance = petMaintenanceRepository.save(maintenance);
             }
 
         } catch (Exception ex) {
             throw ex;
         }
         return maintenance;
+    }
+    public Iterable<PetMaintenanceModel> findByName (String name) {
+        Iterable<PetMaintenanceModel> petMaintenance = new ArrayList<>();
+        try {
+            petMaintenance = petMaintenanceRepository.findByName(name);
+
+        } catch (Exception ex) {
+            throw ex;
+        }
+        return petMaintenance;
+
+        
     }
 
 }

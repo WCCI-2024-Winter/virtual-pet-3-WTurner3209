@@ -5,6 +5,6 @@ import org.wecancodeit.Models.RoboticPetModel;
 
 public interface RoboticPetRepository extends CrudRepository<RoboticPetModel, Long> {
 
-    Iterable<RoboticPetModel> findByManufacturer(Iterable<RoboticPetModel> pet);
+    Iterable<RoboticPetModel> findByManufacturer(String pet);
     
 }

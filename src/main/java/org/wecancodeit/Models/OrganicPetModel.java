@@ -16,7 +16,7 @@ import jakarta.validation.constraints.Min;
 public class OrganicPetModel extends PetModel {
 
     @Column(length = 50, nullable = false)
-    private String petBreed;
+    private String breed;
     @Min(0)
     @Max(25)
     private int petAge;
@@ -39,11 +39,11 @@ public class OrganicPetModel extends PetModel {
      * Parameter
      * 
      */
-    public OrganicPetModel(String name, PetTypeEnums petType, String imageUrl, String petBreed,
+    public OrganicPetModel(String name, PetTypeEnums petType, String imageUrl, String breed,
             int petAge, PetHeathEnums petHealth, PetMoodEnums petMood, TempermentEnums petTemperment,
             boolean petFixed,  ArrayList <Long> maintenanceTaskIds, ArrayList <Long> scheduleTaskIds) {
         super(name, petType, imageUrl, maintenanceTaskIds, scheduleTaskIds );
-        this.petBreed = petBreed;
+        this.breed = breed;
         this.petAge = petAge;
         this.petHealth = petHealth;
         this.petMood = petMood;
@@ -53,7 +53,7 @@ public class OrganicPetModel extends PetModel {
     }
 
     public String getPetBreed() {
-        return petBreed;
+        return breed;
     }
 
     public int getPetAge() {
@@ -78,7 +78,7 @@ public class OrganicPetModel extends PetModel {
 
     @Override
     public String toString() {
-        return super.toString() + "OrganicPetModel [petBreed=" + petBreed + ", petAge=" + petAge + ", petHealth="
+        return super.toString() + "OrganicPetModel [petBreed=" + breed + ", petAge=" + petAge + ", petHealth="
                 + petHealth
                 + ", petMood=" + petMood + ", petTemperment=" + petTemperment + ", petFixed=" + petFixed + "]";
     }

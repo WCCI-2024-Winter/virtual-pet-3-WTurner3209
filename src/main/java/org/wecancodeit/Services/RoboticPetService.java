@@ -44,7 +44,7 @@ public RoboticPetService(RoboticPetRepository roboticPetRepository) {
         return robotic;
     }
 
-    public boolean deleteOrganic(Long id) {
+    public boolean deleteRoboticPet(Long id) {
         boolean result = false;
         try {
 
@@ -71,18 +71,18 @@ public RoboticPetService(RoboticPetRepository roboticPetRepository) {
         return robotic;
     }
 
-    public Iterable<RoboticPetModel> findByManufacturer(String name) {
-        Iterable<RoboticPetModel> pet = new ArrayList<>();
+    public Iterable<RoboticPetModel> findByManufacturer(String manufacturer) {
+        Iterable<RoboticPetModel> roboticPets = new ArrayList<>();
 
         try {
-            pet = roboticPetRepository.findByManufacturer(pet);
+            roboticPets = roboticPetRepository.findByManufacturer(manufacturer);
 
         } catch (Exception ex) {
             throw ex;
         }
-        return pet;
+        return roboticPets;
 
     }
 
-    
-}
+
+    }

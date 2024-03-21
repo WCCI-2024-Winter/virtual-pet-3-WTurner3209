@@ -1,12 +1,13 @@
 package org.wecancodeit.Services;
 
+import org.springframework.stereotype.Service;
 import org.wecancodeit.Models.ContactModel;
 import org.wecancodeit.Models.OrganicPetModel;
 import org.wecancodeit.Models.PetMaintenanceModel;
 import org.wecancodeit.Models.RoboticPetModel;
 import org.wecancodeit.Models.ScheduleModel;
 
-
+@Service
 public class BaseService {
     public static boolean isValidContact(ContactModel contact){
         return true;

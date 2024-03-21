@@ -41,23 +41,7 @@ public class VolunteerService {
         }
         return volunteers;
     }
-    public Iterable<VolunteersModel> findByName(String name, String zip) {
-        Iterable<VolunteersModel> volunteer = new ArrayList<>();
-
-        try {
-            if (zip != null && zip.length() > 2) {
-                zip = zip.substring(0, 2);
-                volunteer = volunteerRepository.findByNameZip(name, zip);
-            } else {
-                volunteer = volunteerRepository.findByName(name);
-            }
-
-        } catch (Exception ex) {
-            throw ex;
-        }
-        return volunteer;
-
-    }
+    
     public boolean deleteVolunteer(Long id) {
         boolean result = false;
         try {

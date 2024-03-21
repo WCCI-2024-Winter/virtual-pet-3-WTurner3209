@@ -5,8 +5,8 @@ import org.springframework.data.repository.CrudRepository;
 import org.wecancodeit.Models.PetMaintenanceModel;
 
 
-public interface PetMaintentanceRepository extends CrudRepository<PetMaintenanceModel, Long>{
+public interface PetMaintenanceRepository extends CrudRepository<PetMaintenanceModel, Long>{
 
-    Iterable<PetMaintenanceModel> fineByName(String name);
+    Iterable<PetMaintenanceModel> findByName(String name);
 
 }

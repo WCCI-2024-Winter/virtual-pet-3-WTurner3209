@@ -3,13 +3,14 @@ package org.wecancodeit.Services;
 import java.util.ArrayList;
 import java.util.Optional;
 
-
+import org.springframework.stereotype.Service;
 import org.wecancodeit.Models.OrganicPetModel;
 
 import org.wecancodeit.Repositories.*;
 
 import jakarta.annotation.Resource;
 
+@Service
 public class OrganicPetService {
     @Resource
     private OrganicPetRepository organicPetRepository;
@@ -73,16 +74,16 @@ public class OrganicPetService {
         return organic;
     }
 
-    public Iterable<OrganicPetModel> findByName(String name) {
-        Iterable<OrganicPetModel> breed = new ArrayList<>();
+    public Iterable<OrganicPetModel> findByBreed(String breed) {
+        Iterable<OrganicPetModel> organicPets = new ArrayList<>();
 
         try {
-            breed = organicPetRepository.findByBreed(breed);
+            organicPets = organicPetRepository.findByBreed(breed);
 
         } catch (Exception ex) {
             throw ex;
         }
-        return breed;
+        return organicPets;
 
     }
 

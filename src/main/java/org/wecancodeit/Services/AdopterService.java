@@ -47,18 +47,12 @@ public class AdopterService {
      * @param name
      * @param Zip
      */
-    public Iterable<AdoptersModel> findByName(String name, String zip) {
+    public Iterable<AdoptersModel> findByName(String name) {
         Iterable<AdoptersModel> adopters = new ArrayList<>();
 
         try {
-            if (zip != null && zip.length() > 2) {
-                zip = zip.substring(0, 2);
-                adopters = adopterRepository.findByNameZip(name, zip);
-            } else {
                 adopters = adopterRepository.findByName(name);
-            }
-
-        } catch (Exception ex) {
+            } catch (Exception ex) {
             throw ex;
         }
         return adopters;
@@ -92,21 +86,5 @@ public class AdopterService {
         return adopter;
     }
 
-    public Iterable<AdoptersModel> findByPreferredPetType(String preferredPetType, String zip) {
-        Iterable<AdoptersModel> adopters = new ArrayList<>();
-
-        try {
-            if (zip != null && zip.length() > 2) {
-                zip = zip.substring(0, 2);
-                adopters = adopterRepository.findByPreferPetTypeZip(zip);
-            } else 
-                adopters = adopterRepository.findByPreferPetType(preferredPetType);
-            
-
-        } catch (Exception ex) {
-            throw ex;
-        }
-        return adopters;
-    }
 
 }

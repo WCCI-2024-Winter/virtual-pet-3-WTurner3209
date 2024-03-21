@@ -10,14 +10,11 @@ public class ScheduleModel {
     @Id
     @GeneratedValue
     private long id;
-    @Id
-    @GeneratedValue
+    
     private long volunteerId;
-    @Id
-    @GeneratedValue
+    
     private long petId;
-    @Id
-    @GeneratedValue
+    
     private long taskId;
 
     private Date nextScheduleTime;
