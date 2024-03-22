@@ -15,17 +15,17 @@ import jakarta.annotation.Resource;
 
 @RestController
 @RequestMapping("/api/v1/maintenance/")
-public class PetMaintenaceControllor {
+public class PetMaintenanceController {
 
     @Resource
     private final PetMaintenanceService petMaintenanceService;
 
-    public PetMaintenaceControllor(PetMaintenanceService petMaintenanceService) {
+    public PetMaintenanceController(PetMaintenanceService petMaintenanceService) {
         this.petMaintenanceService = petMaintenanceService;
     }
 
     @GetMapping
-    public Iterable<PetMaintenanceModel> getAllMaintenace() {
+    public Iterable<PetMaintenanceModel> getAllMaintenance() {
         return petMaintenanceService.findAll();
     }
 

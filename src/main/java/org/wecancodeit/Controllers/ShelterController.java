@@ -15,12 +15,12 @@ import jakarta.annotation.Resource;
 
 @RestController 
 @RequestMapping("/api/v1/Shelter?")
-public class ShelterControllor {
+public class ShelterController {
 
     @Resource
     private final ShelterService shelterService;
 
-    public ShelterControllor(ShelterService shelterService) {
+    public ShelterController(ShelterService shelterService) {
         this.shelterService = shelterService;
     }
      @GetMapping

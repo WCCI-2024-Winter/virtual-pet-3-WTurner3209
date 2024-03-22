@@ -7,7 +7,7 @@ import org.wecancodeit.Models.ScheduleModel;
 
 public interface ScheduleModelRepository extends CrudRepository<ScheduleModel, Long>{
 
-    Iterable<ScheduleModel> findByVolunteerID(Long volunteerId);
-    Iterable<ScheduleModel> findByPetID(Long petId);
-    Iterable<ScheduleModel> findByTaskID(Long taskId);
+    Iterable<ScheduleModel> findByVolunteerId(Long volunteerId);
+    Iterable<ScheduleModel> findByPetId(Long petId);
+    Iterable<ScheduleModel> findByTaskId(Long taskId);
 }

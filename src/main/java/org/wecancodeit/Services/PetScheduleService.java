@@ -44,30 +44,30 @@ public class PetScheduleService {
         return schedule;
     }
 
-    public Iterable<ScheduleModel> findByVolunteerID(Long volunteerId) {
+    public Iterable<ScheduleModel> findByVolunteerId(Long volunteerId) {
         Iterable<ScheduleModel> schedule = null;
         try {
-            schedule = scheduleModelRepository.findByVolunteerID(volunteerId);
+            schedule = scheduleModelRepository.findByVolunteerId(volunteerId);
         } catch (Exception ex) {
             throw ex;
         }
         return schedule;
     }
 
-    public Iterable<ScheduleModel> findByPetID(Long petId) {
+    public Iterable<ScheduleModel> findByPetId(Long petId) {
         Iterable<ScheduleModel> schedule = null;
         try {
-            schedule = scheduleModelRepository.findByPetID(petId);
+            schedule = scheduleModelRepository.findByPetId(petId);
         } catch (Exception ex) {
             throw ex;
         }
         return schedule;
     }
 
-    public Iterable<ScheduleModel> findByTaskID(Long taskId) {
+    public Iterable<ScheduleModel> findByTaskId(Long taskId) {
         Iterable<ScheduleModel> schedule = null;
         try {
-            schedule = scheduleModelRepository.findByTaskID(taskId);
+            schedule = scheduleModelRepository.findByTaskId(taskId);
         } catch (Exception ex) {
             throw ex;
         }
@@ -102,5 +102,5 @@ public class PetScheduleService {
     }
 
     
-    }
+}
 

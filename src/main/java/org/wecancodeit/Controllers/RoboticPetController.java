@@ -15,12 +15,12 @@ import jakarta.annotation.Resource;
 
 @RestController
 @RequestMapping("/api/v1/roboticPet/")
-public class RoboticPetControllor {
+public class RoboticPetController {
 
     @Resource
     private final RoboticPetService roboticPetService;
 
-    public RoboticPetControllor(RoboticPetService roboticPetService) {
+    public RoboticPetController(RoboticPetService roboticPetService) {
         this.roboticPetService = roboticPetService;
     }
 

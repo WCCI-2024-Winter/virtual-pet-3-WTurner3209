@@ -15,27 +15,16 @@ public class AdoptersModel extends ContactModel {
     private ShelterModel shelterModel;
 
     public AdoptersModel() {
-        super();
+
     }
 
     public AdoptersModel(String name, String address, String address2, String city, String state, String zip,
-            String phoneNumber, String email, String imageURL, PetTypeEnums preferPetType) {
+            String phoneNumber, String email, String imageURL, AdoptionsStatusEnum adoptionsStatus, String notes,
+            PetTypeEnums preferPetType) {
         super(name, address, address2, city, state, zip, phoneNumber, email, imageURL);
-        this.preferPetType = preferPetType;
-    }
-
-    public AdoptersModel(AdoptionsStatusEnum adoptionsStatus, String notes, PetTypeEnums preferPetType,
-            ShelterModel shelterModel) {
         this.adoptionsStatus = adoptionsStatus;
         this.notes = notes;
         this.preferPetType = preferPetType;
-        this.shelterModel = shelterModel;
-    }
-
-    public AdoptersModel(String name, String address, String address2, String city, String state, String zip,
-            String phoneNumber, String email, String imageURL, ShelterModel shelterModel) {
-        super(name, address, address2, city, state, zip, phoneNumber, email, imageURL);
-        this.shelterModel = shelterModel;
     }
 
     public AdoptionsStatusEnum getAdoptionsStatus() {
@@ -56,9 +45,8 @@ public class AdoptersModel extends ContactModel {
 
     @Override
     public String toString() {
-        return super.toString() + "AdoptersModel [adoptionsStatus=" + adoptionsStatus + ", notes=" + notes
-                + ", preferPetType="
-                + preferPetType + ", shelterModel=" + shelterModel + "]";
+        return "AdoptersModel [adoptionsStatus=" + adoptionsStatus + ", notes=" + notes + ", preferPetType="
+                + preferPetType + "]";
     }
 
 }

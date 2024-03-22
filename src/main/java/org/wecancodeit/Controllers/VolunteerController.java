@@ -13,12 +13,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @RestController
 @RequestMapping("/api/v1/volunteer/")
-public class VolunteerControllor {
+public class VolunteerController {
 
     @Resource
     private final VolunteerService volunteerService;
 
-    public VolunteerControllor(VolunteerService volunteerService) {
+    public VolunteerController(VolunteerService volunteerService) {
         this.volunteerService = volunteerService;
     }
 

@@ -1,7 +1,5 @@
 package org.wecancodeit.Models;
 
-import java.util.ArrayList;
-
 import org.wecancodeit.Models.Enums.PetTypeEnums;
 import org.wecancodeit.Models.Enums.RoboticPetEnums;
 import jakarta.persistence.Column;
@@ -34,14 +32,12 @@ public class RoboticPetModel extends PetModel {
      * deflault construtor
      */
 
-    public RoboticPetModel() {
-        super();
+    public RoboticPetModel(){
     }
 
     public RoboticPetModel(String name, PetTypeEnums petType, String imageUrl, String model, String manufacturer,
             @Min(0) @Max(100) int petEnergy, @Min(0) @Max(100) int petOil, RoboticPetEnums roboticHealth,
-            ArrayList<Long> scheduleTaskIds, ArrayList<Long> maintenanceTaskIds) {
-        super(name, petType, imageUrl, maintenanceTaskIds, scheduleTaskIds);
+            String string, String string2) {
         this.model = model;
         this.manufacturer = manufacturer;
         this.petEnergy = petEnergy;

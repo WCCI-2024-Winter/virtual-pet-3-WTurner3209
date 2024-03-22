@@ -11,12 +11,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @RestController
 @RequestMapping("/api/v1/organicPet/")
-public class OrganicPetControllor {
+public class OrganicPetController {
 
     @Resource
     private final OrganicPetService organicPetService;
 
-    public OrganicPetControllor(OrganicPetService organicPetService) {
+    public OrganicPetController(OrganicPetService organicPetService) {
         this.organicPetService = organicPetService;
     }
 

@@ -11,12 +11,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @RestController
 @RequestMapping("/api/v1/adopters/")
-public class AdopterControllor {
+public class AdopterController {
 
     @Resource
     private final AdopterService adopterService;
 
-    public AdopterControllor(AdopterService adopterService) {
+    public AdopterController(AdopterService adopterService) {
         this.adopterService = adopterService;
     }
 

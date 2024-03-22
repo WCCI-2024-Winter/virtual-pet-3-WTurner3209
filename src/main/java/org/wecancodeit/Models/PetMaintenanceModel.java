@@ -1,6 +1,7 @@
 package org.wecancodeit.Models;
 
 import org.wecancodeit.Models.Enums.PetTaskEnums;
+import org.wecancodeit.Models.Enums.PetTypeEnums;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
@@ -17,10 +18,14 @@ public class PetMaintenanceModel {
     @Max(1464)
 
     private int frequency;
-    private PetTaskEnums petType;
-    private PetTaskEnums effectedProperty;
+    private PetTypeEnums petType;
+    private PetTaskEnums taskEnums;
 
-    public PetMaintenanceModel() {
+    public PetMaintenanceModel(String name, int frequency, PetTypeEnums petType, PetTaskEnums taskEnums) {
+        this.name = name;
+        this.frequency = frequency;
+        this.petType = petType;
+        this.taskEnums = taskEnums;
     }
 
     public String getName() {
@@ -31,12 +36,12 @@ public class PetMaintenanceModel {
         return frequency;
     }
 
-    public PetTaskEnums getPetType() {
+    public PetTypeEnums getPetType() {
         return petType;
     }
 
     public PetTaskEnums getEffectedProperty() {
-        return effectedProperty;
+        return taskEnums;
     }
 
     public void setId(long id) {
@@ -47,7 +52,7 @@ public class PetMaintenanceModel {
     public String toString() {
         return super.toString() + "PetMaintenanceModel [id=" + id + ", name=" + name + ", frequency=" + frequency
                 + ", petType=" + petType
-                + ", effectedProperty=" + effectedProperty + "]";
+                + ", taskEnums=" + taskEnums + "]";
     }
 
 }

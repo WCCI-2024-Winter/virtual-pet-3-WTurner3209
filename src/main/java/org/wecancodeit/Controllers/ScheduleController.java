@@ -14,13 +14,13 @@ import org.wecancodeit.Services.PetScheduleService;
 import jakarta.annotation.Resource;
 
 @RestController
-@RequestMapping("/api/v1/maintenance/")
-public class ScheduleControllor {
+@RequestMapping("/api/v1/schedule/")
+public class ScheduleController {
 
     @Resource
     private final PetScheduleService petScheduleService;
 
-    public ScheduleControllor(PetScheduleService petScheduleService) {
+    public ScheduleController(PetScheduleService petScheduleService) {
         this.petScheduleService = petScheduleService;
     }
 
@@ -37,17 +37,17 @@ public class ScheduleControllor {
     @GetMapping("{petId}")
     public Iterable<ScheduleModel> getPetId(@PathVariable Long petId) {
 
-        return petScheduleService.findByPetID(petId);
+        return petScheduleService.findByPetId(petId);
     }
 
-    @GetMapping("{TaskId}")
+    @GetMapping("{taskId}")
     public Iterable<ScheduleModel> getTaskId(@PathVariable Long taskId) {
-        return petScheduleService.findByTaskID(taskId);
+        return petScheduleService.findByTaskId(taskId);
     }
 
     @GetMapping("{volunteerId}")
     public Iterable<ScheduleModel> getVolunteerId(@PathVariable Long volunteerId) {
-        return petScheduleService.findByVolunteerID(volunteerId);
+        return petScheduleService.findByVolunteerId(volunteerId);
     }
 
     @DeleteMapping("{id}")

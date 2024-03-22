@@ -2,6 +2,7 @@ package org.wecancodeit.Models;
 
 import java.util.ArrayList;
 
+import org.wecancodeit.Models.Enums.AdoptionsStatusEnum;
 import org.wecancodeit.Models.Enums.PetHeathEnums;
 import org.wecancodeit.Models.Enums.PetMoodEnums;
 import org.wecancodeit.Models.Enums.PetTypeEnums;
@@ -31,7 +32,7 @@ public class OrganicPetModel extends PetModel {
     /*
      * deflault construtor
      */
-    public OrganicPetModel() {
+    public OrganicPetModel(String string, PetTypeEnums dog, Object object, String string2, int i, PetHeathEnums healthy, PetMoodEnums excited, TempermentEnums suspicious, AdoptionsStatusEnum none, String string4) {
         super();
     }
 
