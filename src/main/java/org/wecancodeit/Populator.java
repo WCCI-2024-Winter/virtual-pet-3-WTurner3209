@@ -49,7 +49,7 @@ public class Populator implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         ShelterModel shelterModel = new ShelterModel("Human Shelter", "5768 luka rd", "add 2",
-                "WhiteHall", "Oh", "44221", "756473773", "Noway1@Gmail.com", "",
+                "WhiteHall", "Oh", "44221", "7564737793", "Noway1@Gmail.com", "Null",
                 "null");
         shelterModel.setId(1l);
         shelterService.saveShelter(shelterModel);
