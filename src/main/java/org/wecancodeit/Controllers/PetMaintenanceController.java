@@ -34,7 +34,7 @@ public class PetMaintenanceController {
         return petMaintenanceService.findById(id);
     }
 
-    @GetMapping("{name}")
+    @GetMapping("name/{name}")
     public Iterable<PetMaintenanceModel> getName(@PathVariable String name) {
         return petMaintenanceService.findByName(name);
     }

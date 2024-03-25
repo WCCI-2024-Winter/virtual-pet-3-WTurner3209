@@ -30,7 +30,7 @@ public class AdopterController {
         return adopterService.findById(id);
     }
 
-    @GetMapping("{name}")
+    @GetMapping("name/{name}")
     public Iterable<AdoptersModel> getName(@PathVariable String name) {
         return adopterService.findByName(name);
     }

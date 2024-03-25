@@ -29,7 +29,11 @@ public abstract class PetModel {
         this.maintenanceTaskIds = maintenanceTaskIds;
         this.scheduleTaskIds = scheduleTaskIds;
     }
-
+    public PetModel(String name, PetTypeEnums petType, String imageUrl) {
+        this.name = name;
+        this.petType = petType;
+        this.imageUrl = imageUrl;
+    }
     public long getId() {
         return id;
     }

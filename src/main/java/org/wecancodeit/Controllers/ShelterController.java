@@ -14,7 +14,7 @@ import org.wecancodeit.Services.ShelterService;
 import jakarta.annotation.Resource;
 
 @RestController 
-@RequestMapping("/api/v1/Shelter?")
+@RequestMapping("/api/v1/shelter/")
 public class ShelterController {
 
     @Resource
@@ -31,11 +31,11 @@ public class ShelterController {
     public ShelterModel getShelterId(@PathVariable Long id) {
         return shelterService.findById(id);
     }
-    @GetMapping("{name}")
+    @GetMapping("name/{name}")
     public Iterable<ShelterModel> getName(@PathVariable String name) {
         return shelterService.findByName(name);
     }
-    @GetMapping("{zip}")
+    @GetMapping("zip/{zip}")
     public Iterable<ShelterModel> getZip(@PathVariable String zip) {
         return shelterService.findByZip(zip);
     }

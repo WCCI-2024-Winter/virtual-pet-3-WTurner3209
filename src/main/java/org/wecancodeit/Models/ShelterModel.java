@@ -15,13 +15,12 @@ public class ShelterModel extends ContactModel {
     @OneToMany(mappedBy = "shelterModel", cascade = CascadeType.ALL)
     private Collection<RoboticPetModel> roboticPets;
 
-@OneToMany(mappedBy = "shelterModel", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "shelterModel", cascade = CascadeType.ALL)
     private Collection<AdoptersModel> adopterModels;
 
     @ManyToMany
     @JoinTable(name = "shelter_volunteers", joinColumns = @JoinColumn(name = "shelter_id"), inverseJoinColumns = @JoinColumn(name = "volunteer_id"))
     private Collection<VolunteersModel> volunteers;
-
 
     public ShelterModel() {
         super();
@@ -34,7 +33,7 @@ public class ShelterModel extends ContactModel {
         this.webSite = webSite;
         this.organicPets = new ArrayList<>();
         this.roboticPets = new ArrayList<>();
-        
+
     }
 
     public Collection<AdoptersModel> getAdopterModels() {
@@ -61,7 +60,7 @@ public class ShelterModel extends ContactModel {
     public String toString() {
         return super.toString() + "ShelterModel [webSite=" + webSite + ", organicPets=" + organicPets
                 + ", roboticModel=" + roboticPets
-                 + "]";
+                + "]";
     }
 
 }

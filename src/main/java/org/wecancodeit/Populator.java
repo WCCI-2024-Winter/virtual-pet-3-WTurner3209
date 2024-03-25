@@ -4,9 +4,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import org.wecancodeit.Models.*;
 import org.wecancodeit.Models.Enums.*;
-
 import org.wecancodeit.Services.*;
-
 import jakarta.annotation.Resource;
 
 @Component
@@ -49,83 +47,98 @@ public class Populator implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         ShelterModel shelterModel = new ShelterModel("Human Shelter", "5768 luka rd", "add 2",
-                "WhiteHall", "Oh", "44221", "7564737793", "Noway1@Gmail.com", "Null",
-                "null");
+                "WhiteHall", "Oh", "44221", "7564737793", "Noway1@Gmail.com", null,
+                null);
         shelterModel.setId(1l);
         shelterService.saveShelter(shelterModel);
 
-        // ShelterModel shelterModel2 = new ShelterModel("Cat Shelter", "5746 new balance rd", "add 2",
-        //         "Zanesville", "Oh", "46353", "6143321112", "Noway2@Gmail.com", "",
-        //         "null");
-        // shelterModel2.setId(2l);
+        ShelterModel shelterModel2 = new ShelterModel("Cat Shelter", "5746 new balance rd", "add 2",
+                "Zanesville", "Oh", "46353", "6143321112", "Noway2@Gmail.com", null,
+                null);
+        shelterModel2.setId(2l);
+        shelterService.saveShelter(shelterModel2);
 
-        // ShelterModel shelterModel3 = new ShelterModel("DOG Shelter", "5236 Nike rd", "add 2",
-        //         "Grove City", "Oh", "33353", "6143343112", "Noway3@Gmail.com", "",
-        //         "null");
-        // shelterModel3.setId(3l);
+        ShelterModel shelterModel3 = new ShelterModel("DOG Shelter", "5236 Nike rd", "add 2",
+                "Grove City", "Oh", "33353", "6143343112", "Noway3@Gmail.com", null,
+                null);
+        shelterModel3.setId(3l);
+        shelterService.saveShelter(shelterModel3);
 
-        // AdoptersModel adoptersModel = new AdoptersModel("John Smith", "3244 high street", "add 2", 
-        // "Columbus", "OH", "43543", "438548382", "g@gmail.com",
-        //  "null", AdoptionsStatusEnum.APPROVED, "note",PetTypeEnums.DOG);
+        AdoptersModel adoptersModel = new AdoptersModel("John Smith", "3244 high street", "add 2", 
+        "Columbus", "OH", "43543", "438548382", "g@gmail.com",
+        "null", AdoptionsStatusEnum.APPROVED, "note",PetTypeEnums.DOG);
         
-        // adoptersModel.setId(1l);
-        // adopterService.saveAdopter(adoptersModel);
+        adoptersModel.setId(1l);
+        adopterService.saveAdopter(adoptersModel);
 
-        // AdoptersModel adoptersModel2 = new AdoptersModel("Kat Williams", "4432 fire street", null,
-        //         "London", "oh", "42454", "9267659392", "KW@Yahoo.com", "null", AdoptionsStatusEnum.REQUESTED, "note",
-        //         PetTypeEnums.DOG);
-        // adoptersModel2.setId(2l);
+        AdoptersModel adoptersModel2 = new AdoptersModel("Kat Williams", "4432 fire street", null,
+                "London", "oh", "42454", "9267659392", "KW@Yahoo.com", "null", AdoptionsStatusEnum.REQUESTED, "note",
+                PetTypeEnums.DOG);
+        adoptersModel2.setId(2l);
+        adopterService.saveAdopter(adoptersModel2);
 
-        // AdoptersModel adoptersModel3 = new AdoptersModel("Travis Johns", "3234 Underline street", null,
-        //         "Hilliard", "oh", "57684", "4657899304", "TravelJohn@Yahoo.com", null,AdoptionsStatusEnum.APPROVED , "note",
-        //         PetTypeEnums.ROBOTIC_DOG);
-        // adoptersModel3.setId(3l);
+        AdoptersModel adoptersModel3 = new AdoptersModel("Travis Johns", "3234 Underline street", null,
+                "Hilliard", "oh", "57684", "4657899304", "TravelJohn@Yahoo.com", null,AdoptionsStatusEnum.APPROVED , "note",
+                PetTypeEnums.ROBOTIC_DOG);
+        adoptersModel3.setId(3l);
+        adopterService.saveAdopter(adoptersModel3);
 
-        // OrganicPetModel organicPetModel = new OrganicPetModel("Winnie", PetTypeEnums.DOG, null, "Huskey", 2,
-        //         PetHeathEnums.HEALTHY, PetMoodEnums.EXCITED, TempermentEnums.SUSPICIOUS, AdoptionsStatusEnum.NONE,
-        //         "no notes");
-        // organicPetModel.setId(1l);
+        OrganicPetModel organicPetModel = new OrganicPetModel("Winnie", PetTypeEnums.DOG, "null", "Husky", 2, PetHeathEnums.HEALTHY, PetMoodEnums.EXCITED,
+        TempermentEnums.ACTIVE,true, null, null
+                );
+        organicPetModel.setId(1l);
+        organicPetService.saveOrganic(organicPetModel);
 
-        // OrganicPetModel organicPetModel2 = new OrganicPetModel("Julie", PetTypeEnums.CAT, null, "Egyptian", 1,
-        //         PetHeathEnums.HEALTHY, PetMoodEnums.CALM, TempermentEnums.CAREFREE, AdoptionsStatusEnum.APPROVED,
-        //         "no notes");
-        // organicPetModel2.setId(2l);
+        OrganicPetModel organicPetModel2 = new OrganicPetModel("Lou", PetTypeEnums.CAT, "null", "Tiger", 2, PetHeathEnums.HEALTHY, 
+        PetMoodEnums.DEPRESSED,TempermentEnums.ANXIOUS,true, null, null
+                );
+        organicPetModel2.setId(2l);
+        organicPetService.saveOrganic(organicPetModel2);
 
-        // OrganicPetModel organicPetModel3 = new OrganicPetModel("James", PetTypeEnums.DOG, null, "Lab", 4,
-        //         PetHeathEnums.HUNGRY, PetMoodEnums.DEPRESSED, TempermentEnums.ACTIVE, AdoptionsStatusEnum.REQUESTED,
-        //         "no notes");
-        // organicPetModel3.setId(3l);
+        OrganicPetModel organicPetModel3 = new OrganicPetModel("Joll", PetTypeEnums.DOG, "null", "Wolf", 1, PetHeathEnums.HUNGRY, 
+        PetMoodEnums.CALM,TempermentEnums.CAREFREE,false, null, null
+                );
+        organicPetModel3.setId(3l);
+        organicPetService.saveOrganic(organicPetModel3);
 
-        // PetMaintenanceModel petMaintenanceModel = new PetMaintenanceModel("Clean Dog Pin", 4, 
-        // PetTypeEnums.DOG, PetTaskEnums.CLEAN_ENCLOSURE);
-        // petMaintenanceModel.setId(1l);
+        PetMaintenanceModel petMaintenanceModel = new PetMaintenanceModel("Clean Dog Pin", 4, 
+        PetTypeEnums.DOG, PetTaskEnums.CLEAN_ENCLOSURE);
+        petMaintenanceModel.setId(1l);
+        
 
-        // RoboticPetModel roboticPetModel = new RoboticPetModel("Robo", PetTypeEnums.ROBOTIC_DOG, "imageUrl", "Hall",
-        //         "Intel",
-        //         95, 75, RoboticPetEnums.NORMAL, "null", "null");
-        // roboticPetModel.setId(1l);
+        RoboticPetModel roboticPetModel = new RoboticPetModel("Robo", PetTypeEnums.ROBOTIC_DOG, "null", "Hall",
+                "Intel",
+                95, 75, RoboticPetEnums.NORMAL);
+        roboticPetModel.setId(1l);
+        roboticPetService.saveRobotic(roboticPetModel);
 
-        // RoboticPetModel roboticPetModel2 = new RoboticPetModel("DIgo", PetTypeEnums.ROBOTIC_CAT, "imageUrl", "Hall",
-        //         "Intel",
-        //         65, 85, RoboticPetEnums.NORMAL, "Null", "Null");
-        // roboticPetModel2.setId(2l);
+        RoboticPetModel roboticPetModel2 = new RoboticPetModel("DIgo", PetTypeEnums.ROBOTIC_CAT, "null", "Hall",
+                "Intel",
+                65, 85, RoboticPetEnums.NORMAL);
+        roboticPetModel2.setId(2l);
+        roboticPetService.saveRobotic(roboticPetModel2);
 
-        // RoboticPetModel roboticPetModel3 = new RoboticPetModel("CROWO", PetTypeEnums.ROBOTIC_DOG, "imageUrl", "Jona",
-        //         "Google",
-        //         35, 55, RoboticPetEnums.LOW_BATTERY, "Null", "Null");
-        // roboticPetModel3.setId(3l);
+        RoboticPetModel roboticPetModel3 = new RoboticPetModel("CROWO", PetTypeEnums.ROBOTIC_DOG, "null", "Jona",
+                "Google",
+                35, 55, RoboticPetEnums.LOW_BATTERY);
+        roboticPetModel3.setId(3l);
+        roboticPetService.saveRobotic(roboticPetModel3);
 
-        // VolunteersModel volunteersModel = new VolunteersModel("Micah", "4353 Silver Drive", "", "Cambridge", "OH",
-        //         "43523", "6142260693", "JTurner@gmail.com", "imageURL");
-        // volunteersModel.setId(1l);
+        VolunteersModel volunteersModel = new VolunteersModel("Micah", "4353 Silver Drive", "", "Cambridge", "OH",
+                "43523", "6142260693", "JTurner@gmail.com", "imageURL");
+        volunteersModel.setId(1l);
+        volunteerService.saveVolunteer(volunteersModel);
+        
 
-        // VolunteersModel volunteersModel2 = new VolunteersModel("Meel", "2441 Whisper creek Drive", "", "Delawear", "OH",
-        //         "43533", "6142274733", "MeelTurner@hotmail.com", "imageURL");
-        // volunteersModel2.setId(2l);
+        VolunteersModel volunteersModel2 = new VolunteersModel("Meel", "2441 Whisper creek Drive", "", "Delawear", "OH",
+                "43533", "6142274733", "MeelTurner@hotmail.com", "imageURL");
+        volunteersModel2.setId(2l);
+        volunteerService.saveVolunteer(volunteersModel2);
 
-        // VolunteersModel volunteersModel3 = new VolunteersModel("Chay", "2342 James Rd", "", "Dayton", "OH", "44333",
-        //         "7408434934", "chayhall@icloud.com", "imageURL");
-        // volunteersModel3.setId(3l);
+        VolunteersModel volunteersModel3 = new VolunteersModel("Chay", "2342 James Rd", "", "Dayton", "OH", "44333",
+                "7408434934", "chayhall@icloud.com", "imageURL");
+        volunteersModel3.setId(3l);
+        volunteerService.saveVolunteer(volunteersModel3);
 
     }
 }

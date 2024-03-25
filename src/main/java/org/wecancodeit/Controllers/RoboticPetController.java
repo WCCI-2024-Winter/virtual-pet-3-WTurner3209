@@ -29,7 +29,7 @@ public class RoboticPetController {
         return roboticPetService.findAll();
     }
 
-    @GetMapping("{manufacturer}")
+    @GetMapping("manufacturer/{manufacturer}")
     public Iterable<RoboticPetModel> getRoboticPet(@PathVariable String manufacturer) {
         return roboticPetService.findByManufacturer(manufacturer);
     }

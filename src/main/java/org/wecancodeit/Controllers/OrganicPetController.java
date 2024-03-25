@@ -25,7 +25,7 @@ public class OrganicPetController {
         return organicPetService.findAll();
     }
 
-    @GetMapping("{breed}")
+    @GetMapping("breed/{breed}")
     public Iterable<OrganicPetModel> getOrganicPetByBreed(@PathVariable String breed) {
         return organicPetService.findByBreed(breed);
     }

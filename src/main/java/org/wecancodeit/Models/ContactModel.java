@@ -4,8 +4,8 @@ import jakarta.persistence.Column;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.MappedSuperclass;
-import jakarta.validation.constraints.Max;
-import jakarta.validation.constraints.Min;
+
+import jakarta.validation.constraints.Size;
 
 @MappedSuperclass
 
@@ -26,8 +26,7 @@ public abstract class ContactModel {
     @Column(length = 2, nullable = true)
     private String state;
     @Column(length = 10, nullable = false)
-    @Min(5)
-    @Max(10)
+    @Size(max = 10, min = 5)
     private String zip;
     @Column(length = 10, nullable = true)
     private String phoneNumber;
