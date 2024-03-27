@@ -14,7 +14,7 @@ import org.wecancodeit.Services.RoboticPetService;
 import jakarta.annotation.Resource;
 
 @RestController
-@RequestMapping("/api/v1/roboticPet/")
+@RequestMapping("/api/v1/roboticPets/")
 public class RoboticPetController {
 
     @Resource

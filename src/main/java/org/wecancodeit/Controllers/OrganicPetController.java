@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @RestController
-@RequestMapping("/api/v1/organicPet/")
+@RequestMapping("/api/v1/organicPets/")
 public class OrganicPetController {
 
     @Resource

@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @RestController
-@RequestMapping("/api/v1/volunteer/")
+@RequestMapping("/api/v1/volunteers/")
 public class VolunteerController {
 
     @Resource

@@ -14,7 +14,7 @@ import org.wecancodeit.Services.ShelterService;
 import jakarta.annotation.Resource;
 
 @RestController 
-@RequestMapping("/api/v1/shelter/")
+@RequestMapping("/api/v1/shelters/")
 public class ShelterController {
 
     @Resource
