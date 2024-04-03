@@ -8,6 +8,8 @@ import org.wecancodeit.Models.Enums.PetMoodEnums;
 import org.wecancodeit.Models.Enums.PetTypeEnums;
 import org.wecancodeit.Models.Enums.TempermentEnums;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
@@ -51,6 +53,14 @@ public class OrganicPetModel extends PetModel {
         this.petTemperment = petTemperment;
         this.petFixed = petFixed;
 
+    }
+@JsonIgnore
+    public void setShelterModel(ShelterModel shelterModel) {
+        this.shelterModel = shelterModel;
+    }
+
+    public ShelterModel getShelterModel() {
+        return shelterModel;
     }
 
     public String getBreed() {

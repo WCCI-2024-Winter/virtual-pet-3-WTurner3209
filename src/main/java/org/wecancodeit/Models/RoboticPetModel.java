@@ -2,6 +2,9 @@ package org.wecancodeit.Models;
 
 import org.wecancodeit.Models.Enums.PetTypeEnums;
 import org.wecancodeit.Models.Enums.RoboticPetEnums;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.ManyToOne;
@@ -62,6 +65,10 @@ public class RoboticPetModel extends PetModel {
 
     public RoboticPetEnums getRoboticHealth() {
         return roboticHealth;
+    }
+@JsonIgnore
+    public void setShelterModel(ShelterModel shelterModel) {
+        this.shelterModel = shelterModel;
     }
 
     public ShelterModel getShelterModel() {

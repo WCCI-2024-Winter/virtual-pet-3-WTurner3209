@@ -10,12 +10,11 @@ import jakarta.validation.constraints.Size;
 @MappedSuperclass
 
 public abstract class ContactModel {
-     @Id
+    @Id
     @GeneratedValue()
-    
-    
+
     private long id;
-    @Column(length = 50, nullable=false)
+    @Column(length = 50, nullable = false)
     private String name;
     @Column(length = 150, nullable = false)
     private String address;
@@ -102,5 +101,4 @@ public abstract class ContactModel {
                 + email + ", imageURL=" + imageURL + "]";
     }
 
-    
 }

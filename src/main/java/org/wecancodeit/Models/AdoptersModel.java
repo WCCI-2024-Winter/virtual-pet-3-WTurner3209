@@ -3,6 +3,8 @@ package org.wecancodeit.Models;
 import org.wecancodeit.Models.Enums.AdoptionsStatusEnum;
 import org.wecancodeit.Models.Enums.PetTypeEnums;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.*;
 
 @Entity
@@ -25,6 +27,10 @@ public class AdoptersModel extends ContactModel {
         this.adoptionsStatus = adoptionsStatus;
         this.notes = notes;
         this.preferPetType = preferPetType;
+    }
+    @JsonIgnore
+    public void setShelterModel(ShelterModel shelterModel){
+        this.shelterModel = shelterModel;
     }
 
     public AdoptionsStatusEnum getAdoptionsStatus() {

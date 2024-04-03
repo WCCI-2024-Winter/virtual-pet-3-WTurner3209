@@ -48,20 +48,20 @@ public class Populator implements CommandLineRunner {
         @Override
         public void run(String... args) throws Exception {
                 ShelterModel shelterModel = new ShelterModel("Human Shelter", "5768 luka rd", "add 2",
-                                "WhiteHall", "Oh", "44221", "7564737793", "Noway1@Gmail.com", null,
-                                null);
+                                "WhiteHall", "Oh", "44221", "7564737793", "Noway1@Gmail.com", "null",
+                                "null");
                 shelterModel.setId(1l);
                 shelterService.saveShelter(shelterModel);
 
                 ShelterModel shelterModel2 = new ShelterModel("Cat Shelter", "5746 new balance rd", "add 2",
-                                "Zanesville", "Oh", "46353", "6143321112", "Noway2@Gmail.com", null,
-                                null);
+                                "Zanesville", "Oh", "46353", "6143321112", "Noway2@Gmail.com", "null",
+                                "null");
                 shelterModel2.setId(2l);
                 shelterService.saveShelter(shelterModel2);
 
                 ShelterModel shelterModel3 = new ShelterModel("DOG Shelter", "5236 Nike rd", "add 2",
-                                "Grove City", "Oh", "33353", "6143343112", "Noway3@Gmail.com", null,
-                                null);
+                                "Grove City", "Oh", "33353", "6143343112", "Noway3@Gmail.com", "null",
+                                "null");
                 shelterModel3.setId(3l);
                 shelterService.saveShelter(shelterModel3);
 
@@ -70,17 +70,18 @@ public class Populator implements CommandLineRunner {
                                 "null", AdoptionsStatusEnum.APPROVED, "note", PetTypeEnums.DOG);
 
                 adoptersModel.setId(1l);
+                adoptersModel.setShelterModel(shelterModel);
                 adopterService.saveAdopter(adoptersModel);
 
-                AdoptersModel adoptersModel2 = new AdoptersModel("Kat Williams", "4432 fire street", null,
+                AdoptersModel adoptersModel2 = new AdoptersModel("Kat Williams", "4432 fire street", "null",
                                 "London", "oh", "42454", "9267659392", "KW@Yahoo.com", "null",
                                 AdoptionsStatusEnum.REQUESTED, "note",
                                 PetTypeEnums.DOG);
                 adoptersModel2.setId(2l);
                 adopterService.saveAdopter(adoptersModel2);
 
-                AdoptersModel adoptersModel3 = new AdoptersModel("Travis Johns", "3234 Underline street", null,
-                                "Hilliard", "oh", "57684", "4657899304", "TravelJohn@Yahoo.com", null,
+                AdoptersModel adoptersModel3 = new AdoptersModel("Travis Johns", "3234 Underline street", "null",
+                                "Hilliard", "oh", "57684", "4657899304", "TravelJohn@Yahoo.com", "null",
                                 AdoptionsStatusEnum.APPROVED, "note",
                                 PetTypeEnums.ROBOTIC_DOG);
                 adoptersModel3.setId(3l);
@@ -104,10 +105,10 @@ public class Populator implements CommandLineRunner {
                 organicPetModel3.setId(3l);
                 organicPetService.saveOrganic(organicPetModel3);
 
-                PetMaintenanceModel petMaintenanceModel = new PetMaintenanceModel("Clean Dog Pin", 4,
-                                PetTypeEnums.DOG, PetTaskEnums.CLEAN_ENCLOSURE);
-                petMaintenanceModel.setId(1l);
-                petMaintenanceService.saveMaintenance(petMaintenanceModel);
+                // PetMaintenanceModel petMaintenanceModel = new PetMaintenanceModel("Clean Dog Pin", 4,
+                //                 PetTypeEnums.DOG, PetTaskEnums.CLEAN_ENCLOSURE);
+                // petMaintenanceModel.setId(1l);
+                // petMaintenanceService.saveMaintenance(petMaintenanceModel);
 
                 RoboticPetModel roboticPetModel = new RoboticPetModel("Robo", PetTypeEnums.ROBOTIC_DOG, "null", "Hall",
                                 "Intel",
