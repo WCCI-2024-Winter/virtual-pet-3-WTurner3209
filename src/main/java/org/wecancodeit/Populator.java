@@ -136,7 +136,7 @@ public class Populator implements CommandLineRunner {
                 volunteerService.saveVolunteer(volunteersModel);
 
                 VolunteersModel volunteersModel2 = new VolunteersModel("Meel", "2441 Whisper creek Drive", "",
-                                "Delawear", "OH",
+                                "Delaware", "OH",
                                 "43533", "6142274733", "MeelTurner@hotmail.com", "imageURL");
                 volunteersModel2.setId(2l);
                 volunteerService.saveVolunteer(volunteersModel2);
