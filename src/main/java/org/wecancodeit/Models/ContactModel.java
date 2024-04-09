@@ -25,7 +25,7 @@ public abstract class ContactModel {
     @Column(length = 2, nullable = true)
     private String state;
     @Column(length = 10, nullable = false)
-    @Size(max = 10, min = 5)
+    // @Size(max = 10, min = 5)
     private String zip;
     @Column(length = 10, nullable = true)
     private String phoneNumber;
