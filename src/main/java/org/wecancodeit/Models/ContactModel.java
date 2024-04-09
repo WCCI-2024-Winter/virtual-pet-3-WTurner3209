@@ -29,7 +29,7 @@ public abstract class ContactModel {
     private String zip;
     @Column(length = 10, nullable = true)
     private String phoneNumber;
-    @Column(length = 150, nullable = false)
+    @Column(length = 150, nullable = true)
     private String email;
 
     private String imageURL;
