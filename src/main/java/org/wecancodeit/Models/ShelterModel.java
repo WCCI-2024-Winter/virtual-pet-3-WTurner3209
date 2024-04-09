@@ -16,7 +16,7 @@ public class ShelterModel extends ContactModel {
     private Collection<RoboticPetModel> roboticPets;
 
     @OneToMany(mappedBy = "shelterModel", cascade = CascadeType.ALL)
-    private Collection<AdoptersModel> adopterModels;
+    private Collection<AdoptersModel> adopters;
 
     @ManyToMany
     @JoinTable(name = "shelter_volunteers", joinColumns = @JoinColumn(name = "shelter_id"), inverseJoinColumns = @JoinColumn(name = "volunteer_id"))
@@ -31,13 +31,10 @@ public class ShelterModel extends ContactModel {
             String zip, String phoneNumber, String email, String imageURL, String webSite) {
         super(name, address, address2, city, state, zip, phoneNumber, email, imageURL);
         this.webSite = webSite;
-        this.organicPets = new ArrayList<>();
-        this.roboticPets = new ArrayList<>();
-
     }
 
-    public Collection<AdoptersModel> getAdopterModels() {
-        return adopterModels;
+    public Collection<AdoptersModel> getAdopters() {
+        return adopters;
     }
 
     public Collection<VolunteersModel> getVolunteers() {
@@ -48,7 +45,7 @@ public class ShelterModel extends ContactModel {
         return organicPets;
     }
 
-    public Collection<RoboticPetModel> getRoboticModel() {
+    public Collection<RoboticPetModel> getRoboticPets() {
         return roboticPets;
     }
 
