@@ -91,18 +91,21 @@ public class Populator implements CommandLineRunner {
                                 PetHeathEnums.HEALTHY, PetMoodEnums.EXCITED,
                                 TempermentEnums.ACTIVE, true, null, null);
                 organicPetModel.setId(1l);
+                organicPetModel.setShelterModel(shelterModel);
                 organicPetService.saveOrganic(organicPetModel);
 
                 OrganicPetModel organicPetModel2 = new OrganicPetModel("Lou", PetTypeEnums.CAT, "null", "Tiger", 2,
                                 PetHeathEnums.HEALTHY,
                                 PetMoodEnums.DEPRESSED, TempermentEnums.ANXIOUS, true, null, null);
                 organicPetModel2.setId(2l);
+                organicPetModel2.setShelterModel(shelterModel2);
                 organicPetService.saveOrganic(organicPetModel2);
 
                 OrganicPetModel organicPetModel3 = new OrganicPetModel("Joll", PetTypeEnums.DOG, "null", "Wolf", 1,
                                 PetHeathEnums.HUNGRY,
                                 PetMoodEnums.CALM, TempermentEnums.CAREFREE, false, null, null);
                 organicPetModel3.setId(3l);
+                organicPetModel3.setShelterModel(shelterModel3);
                 organicPetService.saveOrganic(organicPetModel3);
 
                 // PetMaintenanceModel petMaintenanceModel = new PetMaintenanceModel("Clean Dog Pin", 4,
@@ -114,12 +117,14 @@ public class Populator implements CommandLineRunner {
                                 "Intel",
                                 95, 75, RoboticPetEnums.NORMAL);
                 roboticPetModel.setId(1l);
+                roboticPetModel.setShelterModel(shelterModel);
                 roboticPetService.saveRobotic(roboticPetModel);
 
                 RoboticPetModel roboticPetModel2 = new RoboticPetModel("DIgo", PetTypeEnums.ROBOTIC_CAT, "null", "Hall",
                                 "Intel",
                                 65, 85, RoboticPetEnums.NORMAL);
                 roboticPetModel2.setId(2l);
+                roboticPetModel2.setShelterModel(shelterModel2);
                 roboticPetService.saveRobotic(roboticPetModel2);
 
                 RoboticPetModel roboticPetModel3 = new RoboticPetModel("CROWO", PetTypeEnums.ROBOTIC_DOG, "null",
@@ -127,6 +132,7 @@ public class Populator implements CommandLineRunner {
                                 "Google",
                                 35, 55, RoboticPetEnums.LOW_BATTERY);
                 roboticPetModel3.setId(3l);
+                roboticPetModel3.setShelterModel(shelterModel3);
                 roboticPetService.saveRobotic(roboticPetModel3);
 
                 VolunteersModel volunteersModel = new VolunteersModel("Micah", "4353 Silver Drive", "", "Cambridge",

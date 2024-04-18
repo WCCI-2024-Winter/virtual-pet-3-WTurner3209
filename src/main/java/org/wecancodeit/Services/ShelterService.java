@@ -2,7 +2,7 @@ package org.wecancodeit.Services;
 
 import java.util.ArrayList;
 import java.util.Optional;
-
+import org.wecancodeit.Dto.*;
 import org.springframework.stereotype.Service;
 import org.wecancodeit.Models.ShelterModel;
 import org.wecancodeit.Repositories.ShelterRepository;
@@ -20,6 +20,19 @@ public class ShelterService {
 
     public ShelterService(ShelterRepository shelterRepository) {
         this.shelterRepository = shelterRepository;
+    }
+    public Iterable<ShelterLookUpDto> getLookUP() {
+        ArrayList<ShelterLookUpDto> lookup = new ArrayList<>();
+
+        try {
+            Iterable<ShelterModel> shelters = shelterRepository.findAll();
+         for (ShelterModel shelter : shelters){
+            lookup.add(new ShelterLookUpDto(shelter));
+         }   
+        } catch (Exception ex) {
+            throw ex;
+        }
+        return lookup;
     }
 
     public Iterable<ShelterModel> findAll() {

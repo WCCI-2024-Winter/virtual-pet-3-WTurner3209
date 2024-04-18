@@ -1,7 +1,8 @@
 package org.wecancodeit.Controllers;
 
 import org.springframework.web.bind.annotation.*;
-import org.wecancodeit.Models.AdoptersModel;
+import org.wecancodeit.Dto.AdopterDto;
+import org.wecancodeit.Models.*;
 import org.wecancodeit.Services.AdopterService;
 
 import jakarta.annotation.Resource;
@@ -26,8 +27,13 @@ public class AdopterController {
     }
 
     @GetMapping("{id}")
-    public AdoptersModel getAdoptersId(@PathVariable Long id) {
-        return adopterService.findById(id);
+    public AdopterDto getAdoptersId(@PathVariable Long id) {
+        AdoptersModel model = adopterService.findById(id);
+        AdopterDto dto = new AdopterDto(model);
+        ShelterModel sModel = null;
+        dto.setShelterModel(sModel);
+        dto.setShelter_id(sModel.getId());
+        return dto;
     }
 
     @GetMapping("name/{name}")
