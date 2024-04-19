@@ -51,18 +51,22 @@ public class Populator implements CommandLineRunner {
                                 "WhiteHall", "Oh", "44221", "7564737793", "Noway1@Gmail.com", "null",
                                 "null");
                 shelterModel.setId(1l);
+                
+                // shelterModel.getVolunteers().add(volunteersModel);
                 shelterService.saveShelter(shelterModel);
 
                 ShelterModel shelterModel2 = new ShelterModel("Cat Shelter", "5746 new balance rd", "add 2",
                                 "Zanesville", "Oh", "46353", "6143321112", "Noway2@Gmail.com", "null",
                                 "null");
                 shelterModel2.setId(2l);
+                // shelterModel2.getVolunteers().add(volunteersModel2);
                 shelterService.saveShelter(shelterModel2);
 
                 ShelterModel shelterModel3 = new ShelterModel("DOG Shelter", "5236 Nike rd", "add 2",
                                 "Grove City", "Oh", "33353", "6143343112", "Noway3@Gmail.com", "null",
                                 "null");
                 shelterModel3.setId(3l);
+                // shelterModel3.getVolunteers().add(volunteersModel3);
                 shelterService.saveShelter(shelterModel3);
 
                 AdoptersModel adoptersModel = new AdoptersModel("John Smith", "3244 high street", "add 2",
